@@ -27,3 +27,40 @@ bubble(meuse, "lead")
 
 #change the colour:
 bubble(meuse, "lead", col="red")
+
+# same exercise as the first time with primates and crabs, to see the characteristics of ggplot2
+# ecological dataframe
+# relationship between biofuels and oxydative enzimes
+# invent a variable with biofuels, to build a new set of data
+biofuels <- c(120, 200, 350, 570, 750) # array of values : c
+biofuels
+# the same for oxydative enzimes
+oxydative <- c(1200, 1300, 21000, 34000, 50000)
+oxydative
+# build the dataframe
+d <- data.frame(biofuels, oxydative)
+
+# plot the data with the ggplot function, same as data.frame
+ggplot(d, aes(x = biofuels, y = oxydative)) + geom_point() #relationship of our two variables in ggplot environment
+
+#prettify:
+ggplot(d, aes(x = biofuels, y = oxydative)) + geom_point(size=5, col="red")
+
+#change points with lines geom_line
+ggplot(d, aes(x = biofuels, y = oxydative)) + geom_line() 
+# points + lines
+ggplot(d, aes(x = biofuels, y = oxydative)) + geom_point(size=5, col="red") + geom_line()
+#polygons
+ggplot(d, aes(x = biofuels, y = oxydative)) + geom_polygon()
+
+########### IMPORT DATA FROM AN EXTERNAL SOURCE
+
+# setwd("/Users/yourname/lab/")
+setwd("/Users/bianca/lab/")
+setwd("/Users/biancabargagliotti/lab/")
+setwd("/Users/bianca/Desktop/lab")
+setwd("/Users/bianca/Desktop/GCE&SDGs/Monitoring Ecosystems/lab/")
+
+covid <- read.table("covid_agg.csv", header=TRUE)
+
+
