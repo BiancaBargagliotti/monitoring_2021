@@ -56,9 +56,6 @@ ggplot(d, aes(x = biofuels, y = oxydative)) + geom_polygon()
 ########### IMPORT DATA FROM AN EXTERNAL SOURCE
 
 # setwd("/Users/yourname/lab/")
-setwd("/Users/bianca/lab/")
-setwd("/Users/biancabargagliotti/lab/")
-setwd("/Users/bianca/Desktop/lab")
 setwd("/Users/bianca/Desktop/GCE&SDGs/Monitoring Ecosystems/lab/")
 
 covid <- read.table("covid_agg.csv", header=TRUE)
