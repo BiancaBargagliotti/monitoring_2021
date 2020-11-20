@@ -58,6 +58,24 @@ ggplot(d, aes(x = biofuels, y = oxydative)) + geom_polygon()
 # setwd("/Users/yourname/lab/")
 setwd("/Users/bianca/Desktop/GCE&SDGs/Monitoring Ecosystems/lab/")
 
+# import covid data from the folder: 
+# covid is the name I give to this new dataset 
+# read.table is the function to import external data
+# header=TRUE is used to let R know that in this dataset data starts from the second line, while the first line contains the names of columns
 covid <- read.table("covid_agg.csv", header=TRUE)
 
+# to see if data have been successfully imported I recall the data with the name:
+covid # press enter
 
+# to have only the first 6 rows
+head(covid)
+
+# to have a summary of data
+summary(covid)
+
+# ggplot2
+library(ggplot2)
+ggplot(covid, aes(x = lon, y = lat)) + geom_point()
+
+# change the size of dots according to the amount of cases per country
+ggplot(covid, aes(x = lon, y = lat, size=cases)) + geom_point()
