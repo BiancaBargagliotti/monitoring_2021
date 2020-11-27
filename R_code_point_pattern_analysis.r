@@ -64,3 +64,39 @@ plot(cases_map, col=cl)
 plot(coastlines, add = TRUE)
 points(covid_planar, pch=19, cex=0.5)
 
+########
+# set the working directory
+setwd("/Users/bianca/Desktop/GCE&SDGs/Monitoring Ecosystems/lab/")
+
+# recall spatsta
+library(spatstat)
+
+# read the table
+covid <- read.table("covid_agg_csv", header=TRUE)
+covid
+
+# ppp
+attach(covid)
+covid_planar <- ppp(lon,lat, c(-180,180), c(-90,90))
+
+# mark ppp with cases
+marks(covid_planar) <- cases
+cases-map <- Smooth(covid_planar)
+
+# colours:
+cl <- colorRampPalette (c("cornflowerblue", "darkolivegreen3", "coral2", "brown") (100)
+plot(cases_map, col=cl)
+                        
+# install library sf
+install.packages("sf")
+library(sf)
+                        
+# use sf
+Spoints <- st_as_sf(covid, coords=c("lon", "lat"))
+plot(Spoints, cex=Spoints$cases/10000, col="purple3", lwd=3, add=T)
+                        
+# now with rgdal
+library(rgdal)
+coastlines <- readOGR("ne_10m_coastline.shp")
+plot(coastlines, add=T)
+                        
