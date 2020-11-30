@@ -123,3 +123,5 @@ plot(leo_ppp)
 density_map <- density(leo_ppp)
 plot(density_map)
 points(leo_ppp)
+                        
+#save the workspace on R via Workspace > Salva Workspace
