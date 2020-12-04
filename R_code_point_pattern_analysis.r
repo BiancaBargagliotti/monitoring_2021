@@ -158,4 +158,40 @@ chls_map <- Smooth(leo_ppp)
 plot(chls_map, col=cl)
 points(leo_ppp)
                         
-#
+# multipanel
+par(mfrow=c(1,3))
+#first graph: density map
+plot(density_map, col=cl)
+points(leo_ppp)
+#second graph: chlh
+plot(chlh_map, col=cl)
+points(leo_ppp)  
+#third graph: chls
+plot(chls_map, col=cl)
+points(leo_ppp) 
+                        
+#exercise: build a multipnale with 3 rows and 1 column
+par(mfrow=c(3,1))
+#first graph: density map
+plot(density_map, col=cl)
+points(leo_ppp)
+#second graph: chlh
+plot(chlh_map, col=cl)
+points(leo_ppp)  
+#third graph: chls
+plot(chls_map, col=cl)
+points(leo_ppp) 
+      
+#save:
+pdf("multiframe1.pdf")
+par(mfrow=c(1,3))
+#first graph: density map
+plot(density_map, col=cl)
+points(leo_ppp)
+#second graph: chlh
+plot(chlh_map, col=cl)
+points(leo_ppp)  
+#third graph: chls
+plot(chls_map, col=cl)
+points(leo_ppp) 
+dev.off()
