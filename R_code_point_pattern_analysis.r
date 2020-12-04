@@ -125,3 +125,29 @@ plot(density_map)
 points(leo_ppp)
                         
 #save the workspace on R via Workspace > Salva Workspace
+                        
+######## Interpolation of students' data
+                        
+# set the working directory
+setwd("/Users/bianca/Desktop/GCE&SDGs/Monitoring Ecosystems/lab/")
+
+# load the previously saved workspace
+load("point_pattern_analysis.RData")
+# see the list of files inside RData
+ls()
+
+# see the database
+head(leo)
+                        
+#recall spatstat
+library(spatstat)
+attach(leo)
+marks(leo_ppp) <- chlh
+chlh_map <- Smooth(leo_ppp)
+plot(chlh_map)
+points(leo_ppp)
+                        
+#change colours
+cl <- colorRampPalette(c('yellow','orange','red','green'))(100)
+plot(chlh_map, col=cl)
+points(leo_ppp)
