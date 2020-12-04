@@ -151,3 +151,11 @@ points(leo_ppp)
 cl <- colorRampPalette(c('yellow','orange','red','green'))(100)
 plot(chlh_map, col=cl)
 points(leo_ppp)
+                        
+# Exercise: do the same for chls in the sediment
+marks(leo_ppp) <- chls
+chls_map <- Smooth(leo_ppp)
+plot(chls_map, col=cl)
+points(leo_ppp)
+                        
+#
