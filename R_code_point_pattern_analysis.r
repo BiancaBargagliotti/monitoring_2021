@@ -170,7 +170,7 @@ points(leo_ppp)
 plot(chls_map, col=cl)
 points(leo_ppp) 
                         
-#exercise: build a multipnale with 3 rows and 1 column
+#exercise: build a multipanel with 3 rows and 1 column
 par(mfrow=c(3,1))
 #first graph: density map
 plot(density_map, col=cl)
