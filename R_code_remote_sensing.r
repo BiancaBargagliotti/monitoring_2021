@@ -2,3 +2,7 @@
 
 # install two new packages
 install.packages(c("raster", "RStoolbox"))
+
+#recall them
+library(raster)
+library(RStoolbox)
