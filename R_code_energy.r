@@ -67,3 +67,56 @@ defor1
 
 #plot
 plotRGB(defor1, 1, 2, 3, stretch="Lin")
+#try to replace colours
+plotRGB(defor1, 2, 1, 3, stretch="Lin")
+
+#import data for image 2
+defor2 <- brick("defor2_.png")
+
+#plot
+plotRGB(defor2, 1, 2, 3, stretch="Lin")
+
+#2 images in the same page
+par(mfrow=c(1,2))
+plotRGB(defor1, 1, 2, 3, stretch="Lin")
+plotRGB(defor2, 1, 2, 3, stretch="Lin")
+#or 
+par(mfrow=c(2,1))
+plotRGB(defor1, 1, 2, 3, stretch="Lin")
+plotRGB(defor2, 1, 2, 3, stretch="Lin")
+
+#dvi for the first period
+dvi1 <- defor1$defor1_.1 - defor1$defor1_.2
+dev.off()
+plot(dvi1)
+#change colours
+cl <- colorRampPalette(c('darkblue','yellow','red','black'))(100) # specifying a color scheme
+plot(dvi1, col=cl)
+
+#dvi for the second period after the cuts
+dvi2 <- defor2$defor2_.1 - defor2$defor2_.2
+cl <- colorRampPalette(c('darkblue','yellow','red','black'))(100) # specifying a color scheme
+plot(dvi2, col=cl)
+
+#2 dvis in the same page
+par(mfrow=c(2,1))
+plot(dvi1, col=cl, main="DVI before cut") #with the title
+plot(dvi2, col=cl, main="DVI after cut")
+
+#difference in biomass before and after cuts
+difdvi <- dvi1 - dvi2
+dev.off()
+cldif <- colorRampPalette(c('blue','white','red'))(100) # specifying a color scheme
+plot(difdvi, col=cldif, main="amount of energy lost!")
+
+#create an histogram
+hist(difdvi, col="red")
+
+#final part with first image, second image, dvi1, dvi2, difference in the dvis:
+par(mfrow=c(3,2))
+plotRGB(defor1, 1, 2, 3, stretch="Lin")
+plotRGB(defor2, 1, 2, 3, stretch="Lin")
+plot(dvi1, col=cl, main="DVI before cut") 
+plot(dvi2, col=cl, main="DVI after cut")
+plot(difdvi, col=cldif, main="amount of energy lost!")
+hist(difdvi, col="red")
