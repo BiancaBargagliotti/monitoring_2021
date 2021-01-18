@@ -59,5 +59,11 @@ library(raster)
 library(RStoolbox)
 
 # set the working directory
+setwd("/Users/bianca/Desktop/GCE&SDGs/Monitoring Ecosystems/lab/")
 
+#import data (1 layer, function raster; more layers function brick)
+defor1 <- brick("defor1_.png")
+defor1
 
+#plot
+plotRGB(defor1, 1, 2, 3, stretch="Lin")
