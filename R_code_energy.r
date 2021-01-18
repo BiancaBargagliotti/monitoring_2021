@@ -47,9 +47,17 @@ plot(copNDVI, col=clymax)
 
 # zoom in a part of the map
 dev.off()
-#extension of the zoom
+# extension of the zoom
 ext <- c(0,20,35,55)
-#do the crop
+# do the crop
 copNDVI_Italy <- crop(copNDVI, ext)
-#plot
+# plot
 plot(copNDVI_Italy, col=clymax)
+
+# deforestation example
+library(raster)
+library(RStoolbox)
+
+# set the working directory
+
+
