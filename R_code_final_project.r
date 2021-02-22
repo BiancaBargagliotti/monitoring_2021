@@ -1,4 +1,4 @@
 # R_code_final_project.r     
-# setwd("/Users/yourname/lab/")
-
+# set the working directory
+setwd("/Users/bianca/Desktop/GCE&SDGs/Monitoring Ecosystems/lab/")
  
