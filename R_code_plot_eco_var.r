@@ -7,22 +7,22 @@ library(sp)
 
 # data is used to recall dataset
 data(meuse)
+meuse
 
 # look inside the set
-View(meuse)
-head(meuse)
+View(meuse) #it doesn't work for Mac
+head(meuse) #see the frst few lines of the dataset
 
 #Exercise: mean of all the variables?
-
 summary(meuse)
 
 #Exercise: plot zinc (y) against cadmium (x)
-# error
+# we will receive an error
 plot (cadmium, zinc)
 # Error in h(simpleError(msg, call)) : 
   error in evaluating the argument 'x' in selecting a method for function 'plot': oggetto "cadmium" non trovato
 
-# how to explain to R that cadmium is inside the dataset
+# how to explain to R that cadmium is inside the dataset?
 # $ will link cadmium to the dataset
 plot (meuse$cadmium, meuse$zinc)
 
