@@ -33,7 +33,7 @@ plot(cadmium, zinc)
 plot(cadmium, lead)
 
 # how to impress your supervisor
-# Scatterplot Matrices
+# Scatterplot Matrices (grafico a dispersione)
 pairs(meuse)
 
 # Exercise: pair only the element part of the dataset
@@ -50,10 +50,10 @@ head(meuse)
 
 # Exercise: pair only the element part of the dataset
 # only cadmium, copper, lead, zinc...
-#from column 3 to column 6
+# from column 3 to column 6 (that are the columns where there are cadmium, copper, lead and zinc)
 pairs(meuse[,3:6])
 
-# or how to use the names of the columns
+# the same can be done using the names of the columns, preceded by ~ that means "equal"
 pairs(~ cadmium + copper + lead + zinc, data=meuse)
 
 # exercise: just use cadmium, lead, zinc
