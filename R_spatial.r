@@ -4,10 +4,11 @@ library(sp)
 data(meuse)
 head(meuse)
 
-# explaining to R our coordinates
+# explaining to R our coordinates fot he dataset meuse, always with the ~ as "equal"
 coordinates(meuse) = ~x+y
+plot(meuse)
 
-# spsplot is used to plot elements like zinc, cadmium, copper, ...
+# spplot is used to plot elements like zinc, cadmium, copper, ... spread in space
 spplot(meuse, "zinc")
 #give a title to the plot 
 spplot(meuse, "zinc", main="concentration of zinc")
@@ -28,6 +29,10 @@ bubble(meuse, "lead")
 #change the colour:
 bubble(meuse, "lead", col="red")
 
+#install ggplot 2
+install.packages("ggplot2")
+library(ggplot2)
+
 # same exercise as the first time with primates and crabs, to see the characteristics of ggplot2
 # ecological dataframe
 # relationship between biofuels and oxydative enzimes
@@ -39,16 +44,19 @@ oxydative <- c(1200, 1300, 21000, 34000, 50000)
 oxydative
 # build the dataframe
 d <- data.frame(biofuels, oxydative)
+d
 
-# plot the data with the ggplot function, same as data.frame
+# plot the data with the ggplot function, same as data.frame 
+# aes explains what are the variables that we want to consider
+# geom_point is an additional part to the plot, to see data as points
 ggplot(d, aes(x = biofuels, y = oxydative)) + geom_point() #relationship of our two variables in ggplot environment
 
-#prettify:
+#prettify the plot:
 ggplot(d, aes(x = biofuels, y = oxydative)) + geom_point(size=5, col="red")
 
 #change points with lines geom_line
 ggplot(d, aes(x = biofuels, y = oxydative)) + geom_line() 
-# points + lines
+#points + lines
 ggplot(d, aes(x = biofuels, y = oxydative)) + geom_point(size=5, col="red") + geom_line()
 #polygons
 ggplot(d, aes(x = biofuels, y = oxydative)) + geom_polygon()
