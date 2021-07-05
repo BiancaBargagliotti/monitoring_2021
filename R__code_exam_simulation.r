@@ -21,7 +21,7 @@ plot(tjan, col=cltjan)
 
 #same for data from october
 toct <- raster("c_gls_LST10-DC_202010010000_GLOBE_GEO_V1.2.1.nc")
-plot(toct)
+plot(toct, col=cltjan)
 
 #comparison between the two images
 #difference between t in january and t in october
