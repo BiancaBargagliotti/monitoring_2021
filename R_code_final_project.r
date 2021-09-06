@@ -1,8 +1,8 @@
 # R_code_final_project.r    
 
 
-##### I want to assess the consequences on vegetation of fires happened in the Amazon forest during the summer of 2019
-# In order to do this, I consider the NDVI, to asses the greenness of the area, and the FCover, to quantify the spatial extent of the vegetation before, during and after the fires of 2019.
+##### I want to assess the consequences on vegetation determined by fires happened in the Amazon forest during the summer of 2019
+# In order to do this, I consider the NDVI, to asses the greenness of the area, and the FCover, to quantify the spatial extent of the vegetation, before, during and after the fires of 2019.
 
 # The data used are downloaded from Copernicus 
 
@@ -100,7 +100,7 @@ plot(difNDVI2019, col=cldif, main="Difference in NDVI - 2019")
 dev.off()
 
 ##### Always considering the NDVI, I can extend my monitoring timeframe, taking into consideration also 2018 and 2020
-# I upload data from january 2018, zooming on South America and changing the color palette
+# I upload data from january 2018, zooming on South America, changing the color palette and adding a title
 NDVI2018 <- raster("c_gls_NDVI_201801010000_GLOBE_PROBAV_V2.2.1.nc")
 plot(NDVI2018)
 ext <- c(-100,-20,-60,20)
