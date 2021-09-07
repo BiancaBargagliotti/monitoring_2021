@@ -128,6 +128,16 @@ plot(difNDVI2019, col=cldif, main="Difference in NDVI - 2019")
 plot(coastlines, add=T)
 dev.off()
 
+# Visualize the trend of variation of NDVI during 2019 
+plot(NDVIjan2019_SA, NDVIdec2019_SA, main="NDVI variation during 2019", ylab="NDVI december", xlab="NDVI january")
+# it is possible to prettify the graph, changing colors and symbols
+plot(NDVIjan2019_SA, NDVIdec2019_SA, main="NDVI variation during 2019", ylab="NDVI december", xlab="NDVI january", col="darkgreen", pch=17, cex=0.5)
+
+# Save it
+png("Trend NDVI.png")
+plot(NDVIjan2019_SA, NDVIdec2019_SA, main="NDVI variation during 2019", ylab="NDVI december", xlab="NDVI january", col="darkgreen", pch=17, cex=0.5)
+dev.off()
+
 ##### Always considering the NDVI, I can extend my monitoring timeframe, taking into consideration also 2018 and 2020
 # I upload data from january 2018, zooming on South America, changing the color palette and adding a title
 NDVI2018 <- raster("c_gls_NDVI_201801010000_GLOBE_PROBAV_V2.2.1.nc")
