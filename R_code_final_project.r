@@ -7,10 +7,10 @@
 
 # The data used are downloaded from Copernicus 
 
-# First, I set the working directory
+# I set the working directory
 setwd("/Users/bianca/Desktop/GCE&SDGs/Monitoring Ecosystems/lab/")
 
-# Now I install and recall all the packages I'll need for my project:
+# I install and recall all the packages I'll need for my project:
 # To read the data from Copernicus is needed the package ncdf4
 install.packages("ncdf4") 
 library(ncdf4)
@@ -81,7 +81,7 @@ plot(NDVIdec2019_SA, col=cl, main="NDVI after fires season")
 plot(coastlines, add=T)
 dev.off()
 
-# Now I want to see the difference in NDVI from january to december 2019
+# Now I want to see the difference in NDVI from january to december 2019 ####################
 difNDVI2019 <- NDVIjan2019_SA-NDVIdec2019_SA
 cldif <- colorRampPalette(c("blue","white","red"))(100)
 plot(difNDVI2019, col=cldif, main="Difference in NDVI - 2019")
