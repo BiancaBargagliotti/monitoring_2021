@@ -35,6 +35,7 @@ plot(NDVIjan2019)
 ext <- c(-100,-20,-60,20)
 NDVIjan2019_SA <- crop(NDVIjan2019, ext)
 plot(NDVIjan2019_SA)
+
 # I change the colors in the graph to better see the level of greenness and I add a title to it
 cl <- colorRampPalette(c("red","orange","yellow","green"))(100)
 plot(NDVIjan2019_SA, col=cl, main="NDVI before fires season")
