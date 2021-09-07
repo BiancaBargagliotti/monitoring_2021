@@ -3,6 +3,7 @@
 
 ##### I want to assess the consequences on vegetation determined by fires happened in the Amazon forest during the summer of 2019
 # In order to do this, I consider the NDVI, to asses the greenness of the area, and the FCover, to quantify the spatial extent of the vegetation, before, during and after the fires of 2019.
+# I also add an analyses on fire disturbance and on land surface temperature.
 
 # The data used are downloaded from Copernicus 
 
