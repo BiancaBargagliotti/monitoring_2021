@@ -1,7 +1,7 @@
 # R_code_final_project.r    
 
 
-##### I want to assess the consequences on vegetation determined by fires happened in the Amazon forest during the summer of 2019
+##### I want to assess the effects on vegetation determined by fires happened in the Amazon forest during the summer of 2019
 # In order to do this, I consider the NDVI, to asses the greenness of the area, and the FCover, to quantify the spatial extent of the vegetation, before, during and after the fires of 2019.
 # I also add an analyses on fire disturbance and on land surface temperature.
 
@@ -243,7 +243,7 @@ plot(BurntArea2020_SA, col=clf, main="SA january 2020")
 dev.off()
 
 ##### What about the TEMPERATURE?
-# I upload data about the Land Surfac Temperature in august 2018, 2019 and 2020, to see if there are differences
+# I upload data about the Land Surface Temperature in august 2018, 2019 and 2020, to see if there are differences
 T2018 <- raster("c_gls_LST10-TCI_201808110000_GLOBE_GEO_V1.2.1.nc")
 T2019 <- raster("c_gls_LST10-TCI_201908110000_GLOBE_GEO_V1.2.1.nc")
 T2020 <- raster("c_gls_LST10-TCI_202008110000_GLOBE_GEO_V1.3.0.nc")
@@ -266,7 +266,7 @@ plot(T2018_SA, col=clT, main="Temperature august 2018")
 plot(T2019_SA, col=clT, main="Temperature august 2019")
 plot(T2020_SA, col=clT, main="Temperature august 2020")
 # August 2019 results as the month with higher % of red parts compared to 2018 and 2020
-# This is coherent with the previous findings and represents a relation between fires, temperature rising and vegetation cover.t
+# This is coherent with the previous findings and represents a relation between fires, temperature rising and vegetation cover
 
 # Save this last graph
 png("multiframe temperature.png")
