@@ -81,7 +81,7 @@ plot(NDVIdec2019_SA, col=cl, main="NDVI after fires season")
 plot(coastlines, add=T)
 dev.off()
 
-# Now I want to see the difference in NDVI from january to december 2019 ####################
+# Now I want to see the difference in NDVI from january to december 2019
 difNDVI2019 <- NDVIjan2019_SA-NDVIdec2019_SA
 cldif <- colorRampPalette(c("blue","white","red"))(100)
 plot(difNDVI2019, col=cldif, main="Difference in NDVI - 2019")
@@ -203,7 +203,7 @@ plot(coastlines, add=T)
 Fcover2020_SA <- crop(FCover2020, ext)
 plot(Fcover2020_SA, col=cl, main="FCover one year after the fires")
 plot(coastlines, add=T)
-# the resulting map has some white spaces in the northern and southern parts of the region; it may be caused by a lack of data or by the interference determined by some other variables?
+# the resulting map has some white spaces in the northern and southern parts of the region; it may be caused by a lack of data or by the interference determined by some other variables (?)
 
 # Save it
 png("multiframe FCover.png")
